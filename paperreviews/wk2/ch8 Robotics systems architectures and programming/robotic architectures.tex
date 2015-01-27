@@ -1,10 +1,10 @@
-\documentclass{article}
+\documentclass[letterpaper]{article}
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
 
 \begin{document}
-\title{{\large Review} \\ PAPER_TITLE_HERE}
+\title{{Robotic Systems Architectures and Programming\large Review} \\   }
 \author{Luke Fraser}
 \date{\today}
 \maketitle
@@ -19,16 +19,20 @@
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Summary}
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this chapter the authors review different robotics architectures and the pros and cons presented by the different systems. A key component that sets robotic systems apart from traditional computer architectures is the need for asynchronous actions. The environment that robotic systems interact is dynamic and in order to react in real-time it is important for behaviors to be triggered by changes in the environment. Different methods of communication such as client-server and publisher-subscriber have been developed to manage such dynamic asynchronous events.
 
+In early robotics history most systems were plan driven or deliberative systems. It was soon discovered that this model would not work due to the large computational costs of planning. Robots using deliberative systems were slow and were not able to react to a dynamic environment. Later subsumption was created to handle the need for quick reactions to a dynamic environment. Subsumption allowed many layered behaviors to control the behavior of a robot allowing it react quickly and deliberatively in its environment. Many languages have been developed to allow for easier development in the subsumption architecture.
+
+The chapter concludes with a discussion of a robotic case study GRACE. GRACE or Graduate Robot Attending Conference was a robot developed to compete in a robotic challenge. The robot was tasked with attending a conference and finding different location in time to give a talk about itself. The robot was needed to first find the registration desk. Then the robot needed to find the location of the room it was to give its talk. The development of GRACE was done by different groups of a people and was merged into a final working system. This meant that many of the different architectural decision had to be addressed to manage such a complex system. GRACE is a successful example of the use of layered system to accomplish a difficult task. 
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+The chapter outlines the history of robotic architectures well and defines the bases for much of robotic communication. The use of Publish/Subscribe communication protocol is a very important aspect of the robotics programming. Being able to address asynchronous events as well as synchronous ones is key to developing a successful robotic system. THe chapter explains well why these systems are used and how they outperformed previous methods of robotics programming.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
-
+It would have been nice to see an overall description of the different robot architectures with the different strengths and weaknesses associated with each one. The decision between reactive and deliberative systems is an important distinction.
 % /////////////////////////////////////////////////////////////////////////////////////////////
-\cite{goossens93}
+\cite{kortenkamp2008robotic}
 
 \end{document}
