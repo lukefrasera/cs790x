@@ -3,6 +3,7 @@ syntax: glob
 *.pdf
 *.pyc
 *.~
+*~
 
 # Compiled Object files
 *.slo
@@ -93,3 +94,7 @@ target/
 *.bbl
 *.log
 *.blg
+*.nav
+*.snm
+*.backup
+*.toc
