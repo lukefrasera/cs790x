@@ -94,21 +94,131 @@
   \item Cons
   \begin{itemize}
    \item Deliberative and reactive layers interfere.
-   \item Intermediat layer is difficult to develop. - Which layer is right?
+   \item Intermediate layer is difficult to develop. - Which layer is right?
   \end{itemize}
  \end{itemize}
 \end{frame}
 
 \begin{frame}{Behavior Based - Think the Way You Act}
- 
+ \begin{itemize}
+   \item Network of Behaviors
+   \item Behavior nodes interact with other behavior nodes to produce output.
+   \item Pros
+   \begin{itemize}
+     \item Reasoning
+     \item Planning
+     \item Learning
+   \end{itemize}
+   \item Cons
+   \begin{itemize}
+     \item Choosing prevailing behavior can be tricky.
+     \item Do not perform extensive planning.
+     \item Hard to implement.
+     \item Emergent behavior
+   \end{itemize}
+ \end{itemize}
 \end{frame}
 
 \section{Behavior Based Systems}
 \begin{frame}{Behavior Based Systems}
  \begin{itemize}
-  \item Misconceptions
+  \item Behaviors are implemented as control laws.
+  \item Each behavior can take inputs from the robot's sensors or other modules.
+  \item Behaviors can independently:
+  \begin{itemize}
+    \item Receive input from sensors.
+    \item Output actions commands to the same actuators.
+  \end{itemize}
+  \item Behaviors are simple
+  \item Concurrently executed
  \end{itemize}
+\end{frame}
 
+\begin{frame}{Example: Behavior-based system}
+ \begin{center}
+  \includegraphics[width=9cm]{behavior_system.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}{Example: Behavior-based system}
+  Example Behaviors:
+  \begin{itemize}
+    \item Collision-avoidance
+    \item Wall-following
+    \item Target-chasing
+    \item Find-object
+  \end{itemize}
+  Example Atomic Actions:
+  \begin{itemize}
+    \item go-forward-by-a-small-increment
+    \item turn-by-a-small-angle
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Central Challenge}
+ \begin{itemize}
+   \item Action Selection/Behavior Coordination
+   \begin{itemize}
+     \item Behavior hierarchy
+     \begin{itemize}
+       \item Single parent behavior controls actuator.
+     \end{itemize}
+     \item Behavior fusion
+     \begin{itemize}
+       \item Many behaviors together control actuator. \emph{Ex. summing inputs}
+     \end{itemize}
+     \item Activation spreading
+     \begin{itemize}
+       \item Behavior with the highest activation energy wins control.
+     \end{itemize}
+     \item Fuzzy logic/Probability Theory
+     \item etc\ldots
+   \end{itemize}
+  \item Many action selection techniques can be used in the same system.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Misconceptions}
+  \begin{itemize}
+    \item Easy to implement
+    \item Reactive vs. Behavior-based
+    \begin{itemize}
+      \item Thinking - Achieved through a network of behaviors.
+      \item Map storage - distributed over multiple behavior modules.
+    \end{itemize}
+    \item Hybrid vs.Behavior-based
+    \begin{itemize}
+      \item Hybrid is more Expressive - They are the same.
+      \item Layered systems - Both can be layered.
+      \item Hybrid systems - Popular with single robot control.
+      \item Behavior systems - Popular with multi-robot control.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Toto: Behavior-Navigation System}
+ \begin{columns}[T]
+  \begin{column}[T]{6cm}
+     \begin{itemize}
+      \item Behaviors:
+      \begin{itemize}
+	\item Safe navigation
+	\item Landmark detection
+	\item Map learning
+	\item Path planning
+      \end{itemize}
+      \item Map representation
+      \begin{itemize}
+        \item Landmarks stored as behaviors
+        \item Distributed system of nodes
+        \item System can be repositioned and re-plan in real-time.
+      \end{itemize}
+    \end{itemize}
+  \end{column}
+  \begin{column}[T]{4cm}
+    \includegraphics[width=3cm]{toto.png}
+  \end{column}
+ \end{columns}
 \end{frame}
 
 \section{Representation}
