@@ -1,2 +1,2 @@
 #CS790x: Robotics Course
-##Prefessor: Monica Nicolescu
+##Professor: Monica Nicolescu
