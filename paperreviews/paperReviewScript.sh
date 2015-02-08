@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CLASS = "cs491x"
+CLASS="cs491x"
 
 
 # GET INPUT INFORMATION

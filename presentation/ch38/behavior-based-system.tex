@@ -138,7 +138,7 @@
  \begin{center}
   \includegraphics[width=9cm]{behavior_system.png}
  \end{center}
-\end{frame}
+  \end{frame}
 
 \begin{frame}{Example: Behavior-based system}
   Example Behaviors:
@@ -196,6 +196,7 @@
   \end{itemize}
 \end{frame}
 
+\section{Representation}
 \begin{frame}{Toto: Behavior-Navigation System}
  \begin{columns}[T]
   \begin{column}[T]{6cm}
@@ -221,6 +222,102 @@
  \end{columns}
 \end{frame}
 
-\section{Representation}
+\begin{frame}{Toto: Behavior-Navigation System}
+ \begin{itemize}
+  \item Landmark goals
+  \begin{itemize}
+   \item \emph{go to this particular corridor}
+   \item \emph{go to the nearest north facing wall}
+  \end{itemize}
+  \item Message passing - to neighbors
+  \begin{itemize}
+   \item Activation spreading
+   \item Distributed Dijkstra search
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Behavior-based Representation: Toto}
+ \begin{itemize}
+  \item Distributed
+  \begin{itemize}
+   \item Network of communicating behaviors
+   \item Scalable - Adding more nodes to the network doesn't drastically increase computation time
+   \item Efficient - Nodes in the graph operate in a distributed manner where there is no centralized controller
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+
 \section{Learning}
+
+\begin{frame}{Learning}
+  \begin{itemize}
+    \item Goal:
+    \begin{itemize}
+      \item Reason about a dynamic world quickly
+    \end{itemize}
+    \item Machine Learning:
+    \begin{itemize}
+      \item Reinforcement Learning
+      \item Evolutionnary computation/Genetic algorithms
+      \item Fuzzy Logic
+      \item Vision learning
+      \item Multi-agent systems
+    \end{itemize}
+    \item Examples:
+    \begin{itemize}
+      \item Leanring to walk
+      \item Build topo-map
+      \item Divide tasks
+      \item behave socially
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reinforcement Learning}
+  \begin{itemize}  
+    \item Goal:
+    \begin{itemize}
+      \item Improve reinforcement learning through the use of behaviors
+      \item Reduce dimensionality of state space through behaviors
+    \end{itemize}
+    \item Examples:
+    \begin{itemize}
+      \item Hexapod walking \& Box-pushing
+      \begin{itemize}
+        \item Decompose into small set of behaviors
+        \item Reduced state space
+        \item Accelerated and robust learning
+      \end{itemize}
+      \item Multi-robot systems
+      \begin{itemize}
+        \item Used Shaping alongside reinforcement learning
+      \end{itemize}
+    \end{itemize}
+    \item Useful for action selection
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Learning Behavior Networks}
+  \begin{itemize}
+    \item Learning at the netowork level
+    \begin{itemize}
+      \item Abstract behaviors
+      \item Primitive behaviors
+    \end{itemize}
+    \item generalized operator similar to deliberative systems
+    \item The robot dynamically learns the task description
+    \item Example:
+    \begin{itemize}
+      \item robot learning a following pattern
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Learning from History of Behavior Use}
+  \begin{center}
+    \includegraphics[width=6cm]{history.png}
+  \end{center}
+\end{frame}
+
 \end{document}
