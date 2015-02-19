@@ -21,13 +21,23 @@
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
 In this chapter the authors provide an overview of perception in robotics. The chapter focuses on visual perception in robotics, specifically object recognition, movement representation, and synthesis models. Perception is an important aspect of robotics. Through perception robots are capable of recognizing many facets of human actions. For example if a robot were to need to react in a socially acceptable manner then the robot would need to understand and recognize human emotions and state. In order to recognize emotions robotic perception is required. If a robot is required to understand what objects are in its environment then visual perception is required to perform object recognition. Perception is an integral component of robotics that must be addressed.
 
+OBject recognition is an important component of perception. A robot can better understand its environment when it is able to understand what object it can interact with such as doors, handles, tools, and etc. There are several methods for performing object recognition and the important distinction between the methods is how objects are represented. Common methods fall into two categories, model-based, and example-based. The two categories are very distinctive and provide their own challenges. Model based method for object recognition attempt to describe an object in it base sense with some given assumptions. An example of this for face detection would be an assumption of face feature constraints similar to two eyes above a noes over a mouth. This could be used with feature detection in an image to determine whether a face is present. A example-based method would take different pictures of faces at many different viewing angles and lighting conditions and store these attributes in a lookup table. This way it could check an image for the most common configurations of a given object. Each method has pros and cons that lead to different performance characteristics in different environments.
 
+Understanding movement in a scene is also an important aspect of perception. The human ability to understand motion is critical to our understanding of our environment. Without such an understanding we would not be able to detect motions or understand what a person is trying to do just by watching them. Almost every non-verbal action people understand is based on motion understanding. In order to have a robot acquire such an understanding of an environment it is important the motion path of object be taken into account. Common practice for understanding motion is through optical flow. Optical flow is the sense of assigning a velocity to every or some pixels in an image. This is a difficult problem that involves tracking feature over time through many subsequent frames. Feature tracking is an essential aspect of robotic sensing and is a major part of computer vision.
+
+Synthesis models are used to describe human faces and animation. The use of these models are used to make robots more human like and relatable to people. The synthesis models described in the chapter are used to reproduce human like faces for robots as well as animation of robots to be more human like. A robot that has human like animation will be much easier for people to understand and interact with. The models easily understood by people.
+
+The chapter overall discussed many areas of human perception and the implications in robotics. The main focus was on human like cognitive processes that have been useful in developing computer vision as well as robotics counterparts. A large focus of the chapter is on the neuroscience aspect of human perception and trying to understand how people understand and interact with the world.
+
+
+\section*{Comments}
+It seems that general consensus in these sections is that human perceptive techniques are ideal and using non-neural mechanisms is considered a consequence of the state of the art. I sense a bias from the authors in this section. Most of everything seems to attempt to relate back to the human perception system in some way. ``As opposed to the discussed neural models, many of these technical systems exploit nonbiological feature detectors and mechanisms for accomplishing temporal order selecivity and propagation information  over time...'' ``Even though most of these solutions are not based on neural mechanisms, they are highly relevant in robotics for gesture recognition or the tracking of user behavior.''
 % /////////////////////////////////////////////////////////////////////////////////////////////
-\section*{Strengths}
+% \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
 
 % /////////////////////////////////////////////////////////////////////////////////////////////
-\section*{Critique}
+% \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
 
 % /////////////////////////////////////////////////////////////////////////////////////////////
