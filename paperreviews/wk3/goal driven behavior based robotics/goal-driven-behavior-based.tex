@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Integration of representation into goal-driven behavior-based robots}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors created a distributed behavior based navigation and mapping system. The robot Toto was used to perform this task. The robot needed to build a map of its environment and dynamically reconfigure it based on changes it perceives. If the robot is no longer able to get to a location due to an environment change then a fault would be detected and the map would reconfigure so the robot could find another path to its goal.
+
+SLAM was performed with landmarks and the map representation was based on landmarks. As the robot traveled around the environment it would build a map based on landmarks it saw. A user could then tell the robot to go to a particular landmark. Each of the landmark are behaviors that work together in a distributed fashion to find the shortest path to a goal location. This is a dynamic system that can handle changes in the environment as well as scale to larger environment with more landmarks.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+The navigation method was capable of running and real-time without the need for a centralized planning component. The reliability of the system increases dramatically when the robot does not need to deliberate over a long period of time to plan to its goal. As well because the system is distributed it can react to environment changes quickly. As well if one of the landmarks fails this is also not a major problem as a fault would be detected and the robot would still be able to find another path to the goal. The distributed nature of the system is the main contribution of this paper.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+Landmark based map creation has limited navigation planning. As well the use of landmarks based maps provide a very sparse map of the environment and do not allow for a good understanding of the environment. It doesn't allow for a Cartesian based goal to be sent to the robot. Only known landmarks can be traveled to. As well this becomes cumbersome when perform more complex navigation tasks. However this weakness more available today, knowing that SLAM can be done in real-time on discrete grid maps of an environment.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Comments}
+Interesting that this was programmed in LISP. This sort of shows the age of the method as well how impressive this was then. This was done over 20 years ago. It would be interesting to see if a method likes this could be integrated into modern techniques for navigation.
+\cite{143349}
+
+\end{document}

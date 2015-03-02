@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Model-Free Execution Monitoring in Behavior-Based Roboticsl}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors discuss a model-free execution monitoring system. The use of a model-free monitoring system allows a robot to error check iteslef without the need of an entire system model representation. The authors implement a model free method and train it to work in real-world scenarios. Compared to model based systems a model free system observe the system executions and detect faults based on patterns. Where as a model based approach attempts to use predictive models to determine whether a system has experienced a fault.
+
+The central assumption of this paper is that behaviors emit activation levels constantly. These activations form patterns that represent normal work. When normal patterns are witnessed no fault has occurred however when a new patterns appears this is likely a fault. To perfrom fault detection pattern recognition is used to determine when a fault has occurred. The system is trained and is then able to detect a fault based on anomalies. The methods were tested in a simulated environment. The simulated test was based on whether a robot was able to enter a room or not. The robot would attempt to go though a door boundary and if he doors were closed and the robot could not detect the doors an error should be thrown. The robot was successfully able to detect faults, however they noticed a correlation between reaction time and the robustness of the fault detection. The results of the real-world experiment are detect faults much less reliably.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+The use of mode-free fault monitoring allows for a simple way to perform fault detection. There is no need to generate a model and the fualt patterns can be learned. For some cases this method would be preferred.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+A model free method is prone to many issues. The model is only capable with current methods of detecting faults based on what it had previously scene. If a fault occurs in a ways that the system hasn't been trained to handle then the system will not detect the fault. The training phase needed for a complex robot would be extensive in order to produce reliable detection. This also has the draw back of needed to know all faults you want to train for prior to running the robot. It is very difficult to train a robot on all possible failures. Although this method is interesting it seems impractical for real-world use.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{4267877}
+
+\end{document}
