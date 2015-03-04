@@ -100,3 +100,4 @@ target/
 *.snm
 *.backup
 *.toc
+*.fdb_latexmk
