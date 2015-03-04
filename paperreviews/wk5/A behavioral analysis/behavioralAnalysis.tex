@@ -4,7 +4,7 @@
 \usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
 
 \begin{document}
-\title{{\large Review} \\ PAPER_TITLE_HERE}
+\title{{\large Review} \\ A Behavioral Analysis of Computational Models of Visual Attention}
 \author{Luke Fraser}
 \date{\today}
 \maketitle
@@ -19,16 +19,22 @@
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Summary}
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors present a method of evaluation of computational models of visual attention. A computational model of visual attention is model that attempts to represent the how a person or robot tend to look at their environment. The model will define locations in a visual representation of an environment that are likely to be viewed. In most cases computational models are designed to represent how humans attend to areas of an image. A video stream is presented to the model and the output from the model is locations where people are likely to look. Different models have been developed, but there isn't a good method for evaluation and comparison of the different models.
 
+The authors present a background into the methods that will be used to compare the different models. A major goal of this evaluation method is that it shouldn't require a large set of human participants to get conclusive results. This is important because requiring each new model to be tested against a large set of people is difficult and time consuming and it doesn't lend itself to timely research.
+
+10 participants were used to acquire gaze detection to compare against the models. A head mounted eye tracking system was used to get the eye gaze of each participant. 3 random models were used to create a control for random action eye movement: \emph{random filters}, \emph{random saccades},and \emph{random physiological}. 5 of each random model data sets were generated for comparison purposes. Then the different human models are used to generate their data sets. Each of the models create a saliency map that describes the likelihood of a particular location of the image to be attended to. Statistical methods are used to analyze the results of the different saliency maps. The resulting method allows new models to be accurately compared against each other in a less biased and more generalized way. A key being that the new evaluation method takes into account the temporal component of eye-movement likelihoods.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+The use of the random control models is a very nice way to see how the different models compare to different random process will provide useful information on whether your model is better than a random process. Overall this seems like a very good method for comparing different visual models
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The eye-tracking method to validate the evaluation technique seems rather limited in its ability to get the full range of human eye movement. People when looking at the world do not simply watch a small screen with a low field of view. This would limit eye-movement to smaller less aggressive move to see different parts of the screen. A better test would need to account for other parameters. A wider field of view as well the use of stereo images provide a better world representation, plus this is more how people actually see the world. Specifically when the eye-tracker receives similar attended areas that are next points of discontinuity in the image a stereo image could place their euclidean distance much further away than in a standard 2D image. This could discriminate bad correlated locations that would otherwise seem correlated.
 
+As well the resolution of the screen seems like an issue with determining accurately what caused a person to look at a particular part of the screen.
 % /////////////////////////////////////////////////////////////////////////////////////////////
-\cite{goossens93}
+\cite{citation}
 
 \end{document}
