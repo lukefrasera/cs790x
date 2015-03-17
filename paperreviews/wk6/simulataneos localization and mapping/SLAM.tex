@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Chapter 37: Simultaneous Localization and Mapping}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this chapter the authors discuss Simultaneous localization and mapping (SLAM). ``SLAM addresses the problem of acquiring a spatial map of a mobile robot environment while simultaneosly localizing the robot relative to this model''\cite{slam}. SLAM builds on the work of other methods for modeling the world with moving sensors such as, photogrametry, computer vision, ant etc. This history goes back to the invention of the least squares method. Performing SLAM is important for robots to understand their environment. SLAM allows a robot to know where it is at any given moment and determine the next best way to get to its goal. This is one of the most important parts of robotics.
+
+The basis of SLAM is broken down into several measurements of your environment. Below are the locations of the path, odometery, and measurements from a sensor: $$X_T = \{x_0, x_1, x_2, ...,x_T\}$$ $$U_T = \{u_0, u_1, u_2, ...,u_T\}$$ $$Z_T = \{z_0, z_1, z_2, ...,z_T\}$$ Theses represent the standard variables of SLAM.
+
+In SLAM there are 3 main paradigms Extended Kalman Filter (EKF), Gaph-Based Optimization, and Particle Methods. An EKF using measurements from the environment updates the state of the robot and predicts the current location at each time step on-line or off-line. It is the most influential SLAM method used today. Using an EKF a robot can get an improved position estimate in the world as it moves. As the robot moves the EKF also provides a measure of uncertainty of the position of the robot. This will grow as the robot moves due to the added noise of each iteration and move of the robot. This means that as the robot travels the EKF will be less certain that its estimate is close to the true state of the robot. Graph-based methods operate on a graph representation of the environment. As you move around the environment you travel from one node to the next signifying a change in your position. The third method is the particle filtering method. Particle filters operate on the idea that as you travel through an environment and sense different particles you can probabilistically converge towards your correct location as you view different sensed positions in your environment.
+
+The remainder of the chapter focuses on some implementations of the SLAM that have proved useful in the state of the art. The chapter provides a useful introduction to methods of SLAM and their uses in robotics. You understand the import ants of SLAM and it effect on the state of the art.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{slam}
+
+\end{document}
