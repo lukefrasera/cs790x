@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Confidence-based multi-robot learning from demonstration}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors present a confidence based method for learning by demonstration. Learning by demonstration is a method in which robots can be trained to perform a task. A teacher demonstrates how to perform a given task while the robots watch. The robots then attempt to perform the task after watching a correct example of the task. Through these demonstration robots can learn much faster than alternative methods such as reinforcement learning. The method presented in this paper is called \emph{flex}ML\emph{f}D \emph{multi-robot learning from demonstration}. \emph{flex}ML\emph{f}D is a demonstration learning method that allows a teacher to teach multiple robots at the same time collaboratively. A teacher performs demonstrations to a group of robots that are able to communicate with each other and share resources to learn.
+
+The basis of the demonstration learning is from the Confidence Based Autonomy(CBA). It is a method of single robot demonstration learning that applies a confidence to the learning approach. CBA is used with a threshold to trigger a request for a new demonstration. CBA is combined with ML\emph{f}D to produce a multi-robot demonstration learning platform.
+
+The results of the work were promising. They were able to teach up to seven robots at the same time. They taught the robots to sort balls as well as learn a homing exercise. The ball sorting was the first exercise performed by the robots. They were shown how to sort different colored balls into different bins as well as passing balls that they did not have a proper colored bin to sort to another robot for sorting. Each robot needed a total of 4 demonstration to learn the sorting task. Different communication schemes were also tested to show the difference in learning rate based on the level of communication between the different robots.
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+This frame work paves the way for future method that can hopefully speed up the learning process of robots. The use of the CBA is a dynamic way for both the robot and the teaher to be involved in the learning process. This method produces a good understanding of the task in the robots.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+In many of the cases there was no benefit to training the robots as a group. In the ball sorting algorithm each robot needed for demonstrations each to learn the task. That is the same as teaching each robot individually. The CBA method as well is nice, but it requires a parameter to be set on the level of confidence desired by a given robot for a specific task.
+
+In the results section it is clear that the learning rate grows linearly with each additional robot. This is not ideal and is against how humans learn. Linear understanding rate shows that the algorithm does not actually perform collaborative learning. Not only is the learning rate linear, but it is cheaper to teach a single robot seven times over 7 robots once. Their work contributes a lot, but there is a lot of room for improvement and it is apparent that their method does not perform like a true collaborative learning system.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{chernova2010confidence}
+
+\end{document}

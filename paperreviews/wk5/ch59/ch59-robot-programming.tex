@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Springer Handbook of Robotics}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this chapter the authors describe methods for developing robots that operate by demonstration. Programming  robots by demonstration is a useful technique in robotics is a useful mechanism. It allows the robots to learn complex tasks without explicit programming for each new task taking place. A robot can be taught new abilities just by showing it how a task is done. This is similar to how humans teach each other how to perform different tasks. This is beneficial two fold. Not only is there a mechanism to train robots to perform new task without programming, there is also presents a natural, human relatable method to interact with robots.
+
+Early methods of engineering approaches consisted of the robot being trained and executing the reproduction of the action. If the robot had ambiguity in its understanding then further action from the teacher would be required in order for continued execution of the goal action to take place.
+
+Motion in robots is an important factor of achieving task goals. A robot must be able to complete a given job by affecting its actuators in such a fashion consistent with the given task. The ability for a robot to learn these movement is useful strategy for robot programming. This learning is inherently temporal and many of the described methods in the chapter take advantage of HMM's to train robots in different aspects of motion. In one of the examples a robot was learning to hit a tennis ball with a tennis racket. A human demonstrator with skeleton tracking harness would present the robot with examples of proper forehand swing of the tennis racket and the robot would mimic and understand the movement to be able to hit a tennis ball as well.
+
+The second half of the chapter focuses on the biologically based systems for learning and mimicking. These methods try to replicate methods similar to how the human brain learns and imitates tasks. Systems were generated that work on the premise of mirror neurons that seem to react to watching people perform different tasks. From this neural models were built to address these biologically inspired models. A focus of this research has been based on aspects of monkeys and their ability reach and grasp different items. These studies have proven useful in the development of other imitation learning mechanisms.
+
+The chapter overall summarizes a modern look at imitation learning as a whole. It defines trends in the field and where to expect future work to be done. Overall imitation learning is an open problem and there is much work to be done until results similar to human understanding of tasks can be represented for robots.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{citation}
+
+\end{document}
