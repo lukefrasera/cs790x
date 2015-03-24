@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Sonar-based real-world mapping and navigation}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors present a method for performing SLAM in unknown and unstructured environments with sonar sensors on an autonomous robot. SLAM is an important technique in robotics. It allows a robot to understand its surroundings in real-time and navigate without running into obstacles.
+
+The system presented produces a 2D model of its environment. Each ultrasonic sensor provides range measurements of occupied and non occupied space within a cone in front of the sensor. The different reading from the sensors at different times are integrated into a single cohesive map of the environment. The resulting map shows places that are probably occupied. As more readings are taken the map improves and more coverage of the the surroundings is achieved.
+
+The system operates with 24 ultrasonic sensors configured in a ring above the robot. The sensors have a range of 35' and a standard deviation of 0.1'. The system first performs preprocessing on the incoming data by rejecting bad ultrasonic readings and averaging multiple readings. The system updates a 2D voxel surface representing occupied and unoccupied space. Different readings contribute to the probability of a given cell being occupied or not. The probability of occupancy is increased by occupied readings and decreased by a non-occupied reading.
+
+The robot is also able to update its position based on seeing landmarks. It can update its position based on the observations that it sees. This matching of prior observations improves the accuracy of the believed location of the robot. This allows the robot to use the map once it is built. There are multiple axis of representation of the map as well. This allows larger descriptions of the environment to be stored. Each level of the map abstracts further from the base 2D voxel grid. The final level is a symbolic representation that describes a global map with sparse information such as the location of a room or office as a connected graph.
+
+The robot was successfully able to navigate and build a map outside and inside in cluttered environments. The system produced maps of its surroundings and allowed to the robot to understand its path through the environment.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+The sophisticated method for building maps for robots is quite the feat considering the amount of information available to the robot. The robot only used 24 sensors to build its maps with varied accuracy and precision. the ability of the robot to match against prior sensor readings is a fundamental aspect of the SLAM that later lead to the understanding of navigation and localization that we have today. This paper is a testament to the innovation of early roboticists.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The paper does not provide any results about the accuracy of the navigation with the new system. However I am not sure whether or not anything existed at the time of the paper that would allow for accurate position information of the robot to be obtained.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{1087096}
+
+\end{document}
