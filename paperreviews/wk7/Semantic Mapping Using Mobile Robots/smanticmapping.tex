@@ -19,15 +19,23 @@
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Summary}
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
-In this paper the authors present a method to build navigation maps that represent activity and navigability of the environment. They use machine learning method such as, Hidden Markov Models (HMM), and support vector machines (SVM) to build these representations.
+In this paper the authors present a method to build navigation maps that represent activity and navigability of the environment. They use machine learning method such as, Hidden Markov Models (HMM), and support vector machines (SVM) to build these representations. It is beneficial to assign meaning to data because it makes data interpretation easier. The paper presents two approaches to semantic mapping, a navigability map as well as an activity map.
+
+The navigability map is built using a range finder and odemetry. The range finder maps the environment and generates a point cloud representation of the environment. This is done by pointing the laser range finder down at the ground and scanning the as the robot moves. The classification determines which parts of the terrain are navigable versus non-navigable. Examples of navigable areas would be flat surfaces such as a walkway. Whereas a non-navigable surface would be gravel or grass where the area is not flat. This is very useful information when considering safe navigation for a robot. The activity map provides information on the amount of dynamic objects present in parts of the map. This is useful in the case of a road where cars pass by with the potential to damage the robot. With knowledge of the activity the robot can safely traverse an environment avoiding high activity areas where the robot would get in the way.
+
+The methods were successfully able to segment the generated maps into navigable and non-navigable sets as well as determine the activity of different part of the map. This generated a map that will help a robot travel more safely with regard to additional classification features.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+The use of the HMM's and SVM's to determine the areas of a map for safe travel is a novel idea that is very useful for safe navigation. This would produce a robot that would avoid getting in the way of the flow of traffic or other people on a walk way.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The robots are essentially useless during the activity mapping step because they must be static in order to gain accurate data. This limitation doesn't make the robot very useful during map generation as it is simply a static sensor and not a robot at that point.
 
+I am not sure why two different methods for classification were used for the map generation.
+
+Having a robot avoid commonly traveled locations is not however useful in each case. A walk way that people use is a location where a robot should travel, but using this method would exclude all areas that are traveled by people. When in fact locations that are traveled heavily will more likely be locations where robots are suitable to navigate. Context of this information again becomes import to determine the navigability of a given location. The maps generated aren't really higher level representations they are simply another variable of the map. Using more information can lead to better abstractions of the data based on the context of other information.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \cite{4468719}
 
