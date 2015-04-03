@@ -19,15 +19,23 @@
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Summary}
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors describe a multi-robot distributed system for performing mapping, intruder detection and tracking, and transmission to operator of an unexplored building. The team of robots consisted of 80 different robots operating simultaneously. Each of the robots perform in a both distributed and centralized manor. EAch of the robots perform SLAM decentralized on board. A second SLAM algorithm creates a global map across all of the robots so that the map is consistent.
 
+For the exploration component of the problem they use a decentralized frontier exploration technique. This method used local occupancy grids on each robot and minimized the amount of communication between the robots. As each robot explores new territory the local map is generated. The global map is computed alongside however when other robots explore the same space loop closure can be used to fix drift introduced by each robot. Lidar scanners were used to perform slam on each robot. The system was successfully able to generate maps with the proposed method.
+
+At the time of the deployment the robots file in one after another with simple robots following behind a lead robot. When a sensor destination is reached the lead robot teleoperates one of small robots into its deployment position. Through this method the robots eventually understand and map the entire building. Do to the method for constructing the map with each additional robot the algorithm scales linearly. This is what allows them to support 80 robots successfully with reasonable computation.
+
+The second component of the system was the intruder detection. Using off the shelf hardware was critical to completing the challenge cause of the limited time window given by DARPA as well it was what made it possible to keep costs low. Once all of the acoustic sensors are in place they switch on and begin to localize potential intruders within the building. Because it is a large network of sensors they can also localize different intruders within the building.
+
+They were successfully able to explore, map, and navigate the building with the large multirobot setup.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+The ability to control 80 robots simultaneously is quite an accomplishment. The use of lead robots to control and delegate the smaller onces allowed for s such a complex task to be completed. This allows accurate mapping as well. With multiple robots convergence on the true map is easier. This would allow multiple loops closures to happen more often which should create a better map. It approaches a more distributed mapping schema. I found the acoustic net to be very interesting method for detecting intruders. It is like the main robots clear the building and then the other setup waiting for the intruders to show themselves.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
-
+The paper itself is very descriptive, but doesn't introduce any new components to the task. This is more of a systems paper it seems.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \cite{Parker06experimentswith}
 

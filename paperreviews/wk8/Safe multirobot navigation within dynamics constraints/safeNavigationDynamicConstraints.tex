@@ -19,15 +19,21 @@
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Summary}
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors discuss methods for performing autonomous navigation in a dynamic environment of robotic soccer. The methods of this paper were made to perform in the RoboCup competition. In the case of the RoboCup the robots play on a small field with robots roughly the size of 18cm in the diameter. There are cameras looking down on the field which communicate back to the robots or the centralized robot controller. The authors control their robots from a centralized server that gets the position of the robots at each time-step from the overhead camera and gives control signals to the robots based on the robot velocity and position against all other robots on the field. The breaks down into different subcategories, objective handling, path planning, motion control, and safety search.
 
+The system supplies the robots with objectives in real-time to achieve different goals. The overall goal is that the robots work as a team to score goals against the opponent. The system highly depends on the use of passing between robots to score goals against the opponent. The highest priority for the system goes to the robot that is currently interacting with the ball. This way the robot with higher priority isn't interfered with by other robot computation since the system is centralized.
+
+Path planning extended a method called Rapidly exploring random trees. In this method path trees are built form random choices into the environment. This allows a sub-graph of the full graph to be searched to limit the state space of the search process.  This allows for efficient searching of the state space while still getting a close to optimal result. This can be done for each robot in real-time at each time-step without slowing the system down. This prevents the need for other re-planning methods to take place.
+
+The safety search method is a crucial component of safe motion of the robot. Using Newtonian physics the robots movement are estimated and safe collision free movement is produced. This prevents robots from colliding with other robots so that goals can be achieved unhindered. The use of random searching is also used in this setting to produce and efficient search of the state space for projecting the location of the robot. overall they produced a multi-robot navigation system useful in the aspects of the RoboCup challenge.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+This system's use of randomly searching state spaces with biasing component produces a very efficient implementation of different otherwise computationally intensive aspects of navigation.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
-This paper was written in a very scattered and unorganized fashion. It would have been nice if the paper could have been organized into smaller sections that were more specific. The paper also didn't show any mathematical expressions representing their methods or algorithm listings to help the reader quickly understand their methods. finding information of interest in this paper was not easy. In each section the prior work isn't separated from the authors methods which is difficult to locate within the text.
+This paper was written in an unorganized fashion. It would have been nice if the paper could have been organized into smaller sections that were more specific. The paper also didn't show any mathematical expressions representing their methods or algorithm listings to help the reader quickly understand their methods. finding information of interest in this paper was not easy. In each section the prior work isn't separated from the authors methods which is difficult to locate within the text.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \cite{1677952}
 
