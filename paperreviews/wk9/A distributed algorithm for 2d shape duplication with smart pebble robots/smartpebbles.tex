@@ -21,16 +21,16 @@
 % WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
 In this paper the authors discuss their work on a smart object duplication method. The central idea is that you can use small smart blocks tht can link together to duplicat arbitrary object. It is basically another method of 3D printing. In the paper the authors use small 1 cm cubes that can link and communicate with each other. A distributed network is built that allows the blocks to talk with one another. With the ability to pass messages the blocks perform a distributed algorithm to map the object and link other blocks to reproduce the same shape out of the blocks. From a high-level context in theory the medium doesn't matter with the algorithm development in the paper. The use of arbitrary blocks of arbitrary size could be used to produce better results, however due to hardware limitations 1 cm cubes is the smallest achievable at the time of the paper. The hope is that as technology improves more blocks could be used to produce high-resolution representations of objects.
 
-20 1 cm cubes were used in to copy several shapes in the paper. The blocks are first 
+20 1 cm cubes were used in to copy several shapes in the paper. The blocks are first placed around the object to be copied. All of the smart blocks then link and start communicating messages about the shape of the object. The blocks perform a modified Bug2 algorithm to traverse the perimeter of the object. The goal of the Bug2 algorithm will not be reached and due to this the path of Bug2 will find its way back to the starting node with a path describing the shape of the object. After the messages are returned the distributed network then determines a copy area of the new object and turns off the border nodes around to the new copy shape. The idea is that you should be able to brush away the disconnected blocks to reveal a connected shape of the object.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Strengths}
 % DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
-
+The algorithm was capable of reproducing very simple objects surrounded by the blocks. The idea of reproducing objects with small smart particles is a novel idea that could prove useful in different situations.
 % /////////////////////////////////////////////////////////////////////////////////////////////
 \section*{Critique}
 % DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
-
+The algorithm was only tested in a 2D example. This is a serious lack of test results of the algorithm and the claims made from this do not feel appropriate. As well the use of 1 cm would be fine if they had more than 20 of them. only having 20 blocks limits the shapes that can be used by the algorithm. As the number of blocks increases I am curious to see how the running time decreases.
 % /////////////////////////////////////////////////////////////////////////////////////////////
-\cite{goossens93}
+% \cite{goossens93}
 
 \end{document}
