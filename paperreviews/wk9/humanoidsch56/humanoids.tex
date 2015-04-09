@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Humanoids}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this chapter the authors discuss the use and state of the art of humanoid robots. The chapter is broken down into several sections: why humanoids, history and overview, locomotion, manipulation, whole-body activities, and communication. These sections give an overview of humanoids and their uses in the field of robotics.
+
+Humanoids in general are designed for many reasons. Humans by example are very versatile creatures and can adapt to many different scenarios. These qualities make humans a prime model for robots with the same capabilities. In an attempt to build more useful robots different aspects of humans are used to improve the functionality. The specifics of which attributes of a human to choose however is a tough problem. Mechanically speaking building a human based robot is easier said than done. Technology hasn't reached the point where human like motion is possible with typical robotic hardware. People also need to interact with robots and what better way to make people understand a robot that provide a familiar interface for interaction.  As well building humanoids helps people learn about humans in the process. We can understand on a deeper level how people function by improving robots. Another major reason for developing humanoid robots is that most of the obstacles and challenges a humanoid will face are man made objects. This leads to the most useful creature to interact with the world we live in to be a humanoid.
+
+The history of humanoids goes back to the 18th century. In more modern times humanoids have been designed with different ranges in capabilities. One of the first ambitious humanoids that attempted to emulate humans was the WABOT-1 created in 1973. This robot walked with bipedal legs and even talked. It was a major leap forward in robotics. A second leap that gained a lot of media attention was the WABOT-2. A robot that could play the piano. These early developments laid the groundwork in discovering how hard building humanoid robot would be. Even today there does not exist a humanoid robot that can move as fast or as nimbly as humans. Today humanoids are built with differing levels of constraints based on humans. Some robots only incorporate the torso, or the head of a human in the design of the humanoid. Leaving out key features to make the robot more usable with current technology.
+
+One of the most important and difficult tasks of humanoid robotics is manipulation of the arms and legs. People are able to precisely articulate our arms to complete many tasks very quickly. This control is very sophisticated and involves a lot computation. In the case of humanoid robotics a goal of reimplementing a human like arm is still an active area of research. The human arm has 7-DOF which make it have a redundant degree of freedom. This redundancy along with other traits mean that for a given position to place the hand of a robot there are infinity many solutions of paths to that location. Choosing a good motion for the arm is very computationally intense and the state space is very large. The result of this is slow moving robots with long deliberation periods to determine how to move the arm into the correct position. As well when it comes time to bring the hand into the mix it becomes an even bigger challenge. The human hand has 20-DOF far more than the arm. Working with the hands DOF is such a daunting task that simplifications have been made to the control to make it possible. Typically a hand is limited to just 2 DOF which makes it possible to cover most gestures that people use to manipulate objects.
+
+Overall the world of humanoid robotics is ever growing and constantly at the bleeding edge of technology. It requires so many fields of research to come together for robots to function. It is difficult for advances to be made due to all of the areas a researcher must be familiar with. As new technologies arise faster more dependable humanoids will emerge that are capable of delivering more human like motion along with capabilities that more closely match peoples.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+% \section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{ref}
+
+\end{document}
