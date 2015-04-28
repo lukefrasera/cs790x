@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Cost-Based Anticipatory Action Selection for Human Robot Fluency}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors discuss a method for perceiving intent of a person working with a robot collaboratively. The goal of the paper is to improve the efficiency of interactions between human robot interactions. In the case of the robots it is apparent that when they perform actions they work through steps of their problems without regard the state of the other person they are working with. People are able to overtime become very fluent working together. They are able to anticipate the actions of the other without verbal communication as well as their wants and needs in a given task. This allows and increase in efficiency over time. It is important for robots that work closely with people to be able to anticipate people wants and needs just as other people are capable of.
+
+The task that the paper is interested in is a factory floor task of assembling a car in simulation. The robot is programmed with several abilities that allow it to understand and operate on the given task. Two robots were simulated: One reactive based system and one with the anticipatory based system. The two robot types were compared against each other to understand the effects of the anticipatory system. The framework functions by associating cost to transitions of predefined operations. Such as using a particular tool and putting it back. This cost was updated at each timesetp and used to determine the next action selection for the robot. As well the robot associated a given probability of the person choosing to do a given task. This allowed to robot to learn what action the person was going to perform next assuming they worked in a repetitive fashion. This system was compared virtually and in a real-life study.
+
+The Study consisted of 29 participants half of which worked with the baseline reactive system and the others worked with the anticipatory system. It was found the the perceived efficiency increased however the running time of the task did not significantly improve.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+The robot successfully improved the perceived efficiency that made the robot more useful to work with. The implications of this are not fully understood, but this could lead to a robot that people are less likely to get frustrated working with.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The algorithm did not successfully improve the efficiency of the task. This seems to be the over arching goal, but because it was not achieved this became a social paper rather than a collaborative robotics paper. One reason the experiment will fail is that people like the anticipatory robot will try to optimize the task themselves. This means that even with the reactive system people will through repetition learn what the robot will do and make decisions to improve the performance of the task. This will most likely converge in speed at the same rate as the robot making optimizations as well. This means that both tasks will improve in performance because of how well people are able to understand collaborative tasks. An interesting metric may have been to put the two anticipatory systems working together to see if they would converge towards a more optimal solution or simply confuse each other throughout time.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{goossens93}
+
+\end{document}
