@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ Introducing Belbic: Brain Emotional Learning Based Intelligent Controller}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors present an emotional controller based on the mammalian limbic learning system. This controller is then compared against a general PID controller in several simulated environments. It is important to handle the issue of noisy data. In real-world applications noise is a big issue. Sensors never return values from the real-world without noise. This means choices on controlling such systems needs to take this noise into consideration. A general PID controller attempts to manage these issues, however it is still not very robust to noisy disturbances and other methods can be used to directly handle a noisy input to the controller. Fuzzy logic as well as probability theory have been used to deal with an uncertainty associated with a given signal. As well methods of neural nets and learning method can be used to handle uncertainty in the world.
+
+In this paper a emotional controller is implemented and compared against a PID controller. 3 simulated models are used to evaluate the controller two Single Input Single Output (SISO) systems and one Multi Input Multi Output system. The first SISO model simulates a submarine that needs to reach a certain depth. This is a simple model meant to show to capabilities of the system. It is compared against a PID controller. The PID controller outperforms the emotional controller in the simple case however when parameters are changed the emotional controller outperforms the PID and shows that it is more robust to changes in the system. The second SISO system is non-linear and is modeled off of the control of a single degree of freedom robot arm. The third test is on a MIMO system that shows the controllers robustness in a higher order system.
+
+In each case the emotional controller performs well and is very robust to changes in the system. This is an important aspect of control as real-world systems often change and are quite noisy.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////
+The emotional controller manages noise incredibly well as well as changes in the underlying system. With the ability to learn the system is capable of responding to changes much fast than a PID controller is. This is a robust method for controlling a general system.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The controller proposed in this paper was only compared to a PID controller and not to any other type mentioned earlier in the paper. It would have been nice to see how the emotional controller compared to other controllers that handle uncertainty. no mention of running time was given either. It would be nice to see how running time compares against a standard PID controller. As well it would have been nice to see a real-world test.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{doi:10.1080/10798587.2004.10642862}
+
+\end{document}

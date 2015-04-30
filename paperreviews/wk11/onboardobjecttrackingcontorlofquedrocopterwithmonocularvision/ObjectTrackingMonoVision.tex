@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[right=1in,top=1in,left=1in,bottom=1in]{geometry}
+
+\begin{document}
+\title{{\large Review} \\ On-board object tracking control of a quadcopter with monocular vision}
+\author{Luke Fraser}
+\date{\today}
+\maketitle
+
+% REFERENCE THE PAPER HERE ////////////////////////////////////////////////////////////////////
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Summary}
+% WRITE SUMMARY SECTION HERE //////////////////////////////////////////////////////////////////
+In this paper the authors present a method in which to track a known object and maintain a hovering distance position relative to the object. Controlling a drone in GPS denied environments is very important as using drones within buildings for search and rescue is an eare of interest. Localizing a drone is difficult and is still an ongoing area of research. Recent advances in microcontrollers has allowed for vision processing on-board the small quadrocopters. This has expanded the range of possible computations available to a quadrocopter.
+
+Using modern SBC's the authors were able to build an object tracking system that can obtain a local relative position to the tracked object. It then uses this information to maintain steady flight with respect to the object of interest. The object of interest is a small brightly colored orange ball that the camera can easily see. The camera image is then converted into the HSV color space so color is more constant. Then the orange is selected manually by the user and the quadrocopter holds position based on the connected components of the tracked object. The tracked objects distance is determined by area in the image the object currently occupies. This is determined by counting the pixels within the connected components. The distance is then calculated from the view angle of the camera and the known a priori size of the object of interest. Then 3 controllers are used to control the attitude of the copter. For the distance metric a kalman filter is needed because the estimate is very noisy. As well it is important to fuse the different sensor inputs because they come into the system at different frequencies. The IMU comes into the system at 60Hz whereas the Tracking algorithm publishes at a rate of 8Hz. The copter is able to maintain a general location based on the tracked object projected location.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Strengths}
+% DISCUSS THE STRENGTHS OF THE PAPER //////////////////////////////////////////////////////////-
+The method of controlling the copter is useful and performs well however this is not a central contribution as these controllers are well known. The use of a kalman filter on the object tracker data is a useful method to reduce the noise introduced by the camera sensor.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\section*{Critique}
+% DISCUSS THE CRITIQUE OF THE PAPER ///////////////////////////////////////////////////////////
+The assumption that the copter will have a smooth brightly colored blob in an image to track is very un-robust. This makes the object tracker very sensitive and parameter tuning is required at each step for the object to be detected in a given frame. If a camera with auto-exposure is desired to handle more variations in illumination the HSV space will still not produce enough information to robustly track the object.
+
+This method as well only operates on rotationally invariant shapes. If the object of interest was not a sphere then at different view points the object would have a different perceived area. There are far better object tracking methods to handle these issues. Using a brightly colored object to track is not guaranteed in most real-world scenarios. 
+
+The system can not handle occlusions of any kind as this would either produce multiple objects to track or a different area that would throw of the distance metric.
+
+The computational complexity of the algorithm is very light. I don't see how such low frame rates were achieved with the proposed system. I have used far more aggressive methods alongside the proposed system for tracking and I was able to track with much higher frame-rates on a similar system without trouble. To help with the computational cost most of the frame is not needed to be searched at each iteration of the algorithm. A sub-frame can be used based on the kalman filters predicted location of the next frame. This means that only a region of interest would be necessary to search which would be much faster. Only when the tracker is lost would the entire frame searched to find the shape again.
+% /////////////////////////////////////////////////////////////////////////////////////////////
+\cite{6842280}
+
+\end{document}
